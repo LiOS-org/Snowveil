@@ -3,7 +3,7 @@
   = site.minima.nav_pages | default: default_paths -%} {%- assign page_titles =
   site.pages | map: 'title' | compact %}
   <div class="snowveil-nav-title">
-    <span>{{{{ site.title | escape }}}}</span>
+    <span>{{ site.title | escape }}</span>
   </div>
   {%- unless page_titles == empty %}
   <nav class="snowveil-nav-contents">
