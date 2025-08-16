@@ -5,7 +5,7 @@
   <a class="site-title" rel="author" href="{{ '/' | relative_url }}"
     >{{ site.title | escape }}</a
   >
-  <div class="snowveil-nav-title"><span>Snowveil</span></div>
+  <div class="snowveil-nav-title"><span>{{site.snowveil.name}}</span></div>
   {%- unless page_titles == empty %}
   <nav class="snowveil-nav-contents">
     {% include nav-items.html paths = page_paths %}
