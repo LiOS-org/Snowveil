@@ -4,5 +4,7 @@
   <a class="snowveil-button" href="{{ hyperpage.url | relative_url }}"
     ><span>{{ hyperpage.title | escape }}</span></a
   >
-  {%- endif -%} {%- endfor %}
+  {% for page in site.pages %} {% unless page.nav_exclude %}
+  <li><a href="{{ page.url | relative_url }}">{{ page.title }}</a></li>
+  {% endunless %} {% endfor %} {%- endif -%} {%- endfor %}
 </div>
