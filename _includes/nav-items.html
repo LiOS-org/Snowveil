@@ -1,8 +1,7 @@
-<div class="snowveil-button-group">
-  {%- for path in include.paths -%} {%- assign hyperpage = site.pages | where:
-  "path", path | first -%} {%- if hyperpage.title %}
-  <a class="snowveil-button" href="{{ hyperpage.url | relative_url }}"
-    ><span>{{ hyperpage.title | escape }}</span></a
-  >
-  {%- endif -%} {%- endfor %}
-</div>
+{%- for path in include.paths -%} {%- assign hyperpage = site.pages | where:
+"path", path | first -%} {%- if hyperpage.title and hyperpage.nav_exclude !=
+true %}
+<a class="snowveil-button" href="{{ hyperpage.url | relative_url }}">
+  <span>{{ hyperpage.title | escape }}</span>
+</a>
+{%- endif -%} {%- endfor %}
