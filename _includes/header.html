@@ -2,10 +2,9 @@
   {%- assign default_paths = site.pages | map: "path" -%} {%- assign page_paths
   = site.minima.nav_pages | default: default_paths -%} {%- assign page_titles =
   site.pages | map: 'title' | compact %}
-  <a class="site-title" rel="author" href="{{ '/' | relative_url }}"
-    >{{ site.title | escape }}</a
-  >
-  <div class="snowveil-nav-title"><span>{{site.snowveil.name}}</span></div>
+  <div class="snowveil-nav-title">
+    <span>{{{{ site.title | escape }}}}</span>
+  </div>
   {%- unless page_titles == empty %}
   <nav class="snowveil-nav-contents">
     {% include nav-items.html paths = page_paths %}
