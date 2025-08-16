@@ -22,6 +22,9 @@ main h1 {
   color: var(--black);
   text-align: center;
 }
+main .snowveil-card-container {
+  background: var(--frosted-background);
+}
 
 .post-content {
   color: var(--black);
