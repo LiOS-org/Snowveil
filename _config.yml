@@ -14,7 +14,6 @@
 #   in _config.yml. It will appear in your document head meta (for Google search
 #   results) and in your feed.xml site description.
 
-
 # Build settings
 # --------------
 #
@@ -29,16 +28,15 @@
 # remote_theme: jekyll/minima@d4d779a
 #
 # Minima requires the following plugins:
-# plugins:
-#  - jekyll-feed
-#  - jekyll-seo-tag
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
 #
 # Uncomment the following setting if you wish to disable deprecation warnings
 #   from newer versions of sass converter. Adapt as required.
 # sass:
 #   quiet_deps: true
 #   silence_deprecations: [import]
-
 
 # Minima-specific settings (applicable to Minima v3 and above only)
 # -----------------------------------------------------------------

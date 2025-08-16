@@ -1,22 +1,33 @@
-<ul class="social-media-list">
-{%- for entry in site.minima.social_links -%}
-  <li>
-    <a rel="me" href="{{ entry.url }}" target="_blank" title="{{ entry.title }}">
-      <span class="grey fa-brands fa-{{ entry.icon }} fa-lg"></span>
-    </a>
-  </li>
-{%- endfor -%}
-{% unless site.minima.hide_site_feed_link %}
-  <li>
-    <a href="{{ site.feed.path | default: 'feed.xml' | absolute_url }}" target="_blank" title="Subscribe to syndication feed">
-      <svg class="svg-icon grey" viewbox="0 0 16 16">
-        <path d="M12.8 16C12.8 8.978 7.022 3.2 0 3.2V0c8.777 0 16 7.223 16 16h-3.2zM2.194
-          11.61c1.21 0 2.195.985 2.195 2.196 0 1.21-.99 2.194-2.2 2.194C.98 16 0 15.017 0
-          13.806c0-1.21.983-2.195 2.194-2.195zM10.606
-          16h-3.11c0-4.113-3.383-7.497-7.496-7.497v-3.11c5.818 0 10.606 4.79 10.606 10.607z"
-        />
-      </svg>
-    </a>
-  </li>
-{%- endunless %}
-</ul>
+<div class="social-media-list snowveil-pebble-navigation-container-bottom">
+  {%- for entry in site.minima.social_links -%}
+  <a rel="me" href="{{ entry.url }}" target="_blank" title="{{ entry.title }}">
+    <span
+      class="snowveil-pebble-button snowveil-frosted-glass grey fa-brands fa-{{ entry.icon }} fa-lg"
+    ></span>
+  </a>
+  {%- endfor -%} {% unless site.minima.hide_site_feed_link %}
+  <a
+    href="{{ site.feed.path | default: 'feed.xml' | absolute_url }}"
+    target="_blank"
+    title="Subscribe to syndication feed"
+    class="snowveil-pebble-button snowveil-frosted-glass"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      class="lucide lucide-rss-icon lucide-rss"
+    >
+      <path d="M4 11a9 9 0 0 1 9 9" />
+      <path d="M4 4a16 16 0 0 1 16 16" />
+      <circle cx="5" cy="19" r="1" />
+    </svg>
+  </a>
+  {%- endunless %}
+</div>

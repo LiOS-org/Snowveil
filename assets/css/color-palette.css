@@ -1,0 +1,12 @@
+:root {
+  --white: #dbd8da;
+  --black: #0e1d32;
+  --primary: #88dddd;
+  --secondary: #bf8fc4;
+  /* Frosted Glass */
+  --frosted-white: var(--dbd8da);
+  --frosted-black: var(--0e1d32);
+  --frosted-primary: var(--88dddd);
+  --frosted-secondary: var(--bf8fc4);
+  --frosted-background: var(--frosted-white);
+}

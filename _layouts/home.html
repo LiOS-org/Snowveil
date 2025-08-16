@@ -4,64 +4,58 @@ layout: base
 
 <div class="home">
   {%- if page.title -%}
-    <h1 class="page-heading">{{ page.title }}</h1>
+  <h1 class="page-heading">{{ page.title }}</h1>
+  {%- endif -%} {{ content }} {% if site.paginate %} {% assign posts =
+  paginator.posts %} {% else %} {% assign posts = site.posts %} {% endif %} {%-
+  if posts.size > 0 -%} {%- if page.list_title -%}
+  <h2 class="post-list-heading">{{ page.list_title }}</h2>
   {%- endif -%}
-
-  {{ content }}
-
+  <div class="post-list snowveil-card-container">
+    {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+    {%- for post in posts -%}
+    <div class="snowveil-card snowveil-frosted-glass">
+      <span class="post-meta">{{ post.date | date: date_format }}</span>
+      <h3>
+        <a class="post-link" href="{{ post.url | relative_url }}">
+          {{ post.title | escape }}
+        </a>
+      </h3>
+      {%- if site.minima.show_excerpts -%} {{ post.excerpt }} {%- endif -%}
+    </div>
+    {%- endfor -%}
+  </div>
 
   {% if site.paginate %}
-    {% assign posts = paginator.posts %}
-  {% else %}
-    {% assign posts = site.posts %}
-  {% endif %}
-
-
-  {%- if posts.size > 0 -%}
-    {%- if page.list_title -%}
-      <h2 class="post-list-heading">{{ page.list_title }}</h2>
-    {%- endif -%}
-    <ul class="post-list">
-      {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-      {%- for post in posts -%}
-      <li>
-        <span class="post-meta">{{ post.date | date: date_format }}</span>
-        <h3>
-          <a class="post-link" href="{{ post.url | relative_url }}">
-            {{ post.title | escape }}
-          </a>
-        </h3>
-        {%- if site.minima.show_excerpts -%}
-          {{ post.excerpt }}
-        {%- endif -%}
-      </li>
-      {%- endfor -%}
-    </ul>
-
-    {% if site.paginate %}
-      <div class="pager">
-        <ul class="pagination">
-        {%- if paginator.previous_page %}
-          <li>
-            <a href="{{ paginator.previous_page_path | relative_url }}" class="previous-page" title="Go to Page {{ paginator.previous_page }}">
-              {{ paginator.previous_page }}
-            </a>
-          </li>
-        {%- else %}
-          <li><div class="pager-edge">•</div></li>
-        {%- endif %}
-          <li><div class="current-page">{{ paginator.page }}</div></li>
-        {%- if paginator.next_page %}
-          <li>
-            <a href="{{ paginator.next_page_path | relative_url }}" class="next-page" title="Go to Page {{ paginator.next_page }}">
-              {{ paginator.next_page }}
-            </a>
-          </li>
-        {%- else %}
-          <li><div class="pager-edge">•</div></li>
-        {%- endif %}
-        </ul>
+  <div class="pager">
+    <div class="pagination">
+      {%- if paginator.previous_page %}
+      <div>
+        <a
+          href="{{ paginator.previous_page_path | relative_url }}"
+          class="previous-page snowveil-button"
+          title="Go to Page {{ paginator.previous_page }}"
+        >
+          {{ paginator.previous_page }}
+        </a>
       </div>
-    {%- endif %}
-  {%- endif -%}
+      {%- else %}
+      <div><div class="pager-edge">•</div></div>
+      {%- endif %}
+      <div><div class="current-page">{{ paginator.page }}</div></div>
+      {%- if paginator.next_page %}
+      <div>
+        <a
+          href="{{ paginator.next_page_path | relative_url }}"
+          class="next-page snowveil-button"
+          title="Go to Page {{ paginator.next_page }}"
+        >
+          {{ paginator.next_page }}
+        </a>
+      </div>
+      {%- else %}
+      <div><div class="pager-edge">•</div></div>
+      {%- endif %}
+    </div>
+  </div>
+  {%- endif %} {%- endif -%}
 </div>

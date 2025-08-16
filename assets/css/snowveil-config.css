@@ -1,0 +1,10 @@
+:root {
+  --snowveil-button-background: var(--secondary);
+  --snowveil-button-on-hover-background: var(--primary);
+}
+.post-list {
+  --snowveil-card-background: var(--frosted-background);
+}
+main {
+  --snowveil-card-background: var(--frosted-background);
+}

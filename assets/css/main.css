@@ -1,0 +1,30 @@
+:root {
+  background: repeating-radial-gradient(
+    circle at 50% 50%,
+    var(--primary),
+    var(--secondary)
+  ) !important;
+}
+.snowveil-header-nav {
+  background-color: var(--frosted-background);
+  color: var(--black);
+  z-index: 5;
+}
+.page-heading {
+  color: var(--white);
+  text-align: center;
+}
+main {
+  margin-top: 30px;
+  width: 100%;
+}
+main h1 {
+  color: var(--black);
+  text-align: center;
+}
+
+.post-content {
+  color: var(--black);
+  line-height: 1.6;
+  font-size: 22px;
+}
