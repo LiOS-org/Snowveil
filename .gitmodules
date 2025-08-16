@@ -1,0 +1,3 @@
+[submodule "Snowveil-Open"]
+	path = Snowveil-Open
+	url = https://github.com/LiOS-org/Snowveil-Open.git
