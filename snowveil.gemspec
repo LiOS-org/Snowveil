@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name     = "snowveil"
-  spec.version  = "1.0.4"
+  spec.version  = "1.0.5"
   spec.authors  = ["MD Saifullah"]
   spec.email    = ["muhammadsaifullah2223@gmail.com"]
 

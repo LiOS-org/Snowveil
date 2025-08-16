@@ -9,7 +9,7 @@ layout: base
   paginator.posts %} {% else %} {% assign posts = site.posts %} {% endif %} {%-
   if posts.size > 0 -%} {%- if page.list_title -%}
   <h2 class="post-list-heading">{{ page.list_title }}</h2>
-  {%- endif -%}
+  {%- endif -%} {% comment %}
   <div class="post-list snowveil-card-container">
     {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
     {%- for post in posts -%}
@@ -24,8 +24,7 @@ layout: base
     </div>
     {%- endfor -%}
   </div>
-
-  {% if site.paginate %}
+  {% endcomment -%} {% if site.paginate %}
   <div class="pager">
     <div class="pagination">
       {%- if paginator.previous_page %}
