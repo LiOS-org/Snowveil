@@ -35,16 +35,28 @@ layout: base
   </div>
 
   <div class="snowveil-card" itemprop="articleBody">{{ content }}</div>
-  {%- assign sorted = site.open | sort: "order" -%} {%- assign current_index =
-  sorted | index_of: page -%} {%- assign prev_page = sorted[current_index |
-  minus: 1] -%} {%- assign next_page = sorted[current_index | plus: 1] -%}
+  {%- assign sorted = site.open | sort: "order" -%}
+  {%- for post in sorted -%}
+    {%- if post.url == page.url -%}
+      {%- assign current_index = forloop.index0 -%}
+      {%- break -%}
+    {%- endif -%}
+  {%- endfor -%}
+  {%- assign prev_index = current_index | minus: 1 -%}
+  {%- assign next_index = current_index | plus: 1 -%}
+  {%- if prev_index >= 0 -%}
+    {%- assign prev_page = sorted[prev_index] -%}
+  {%- endif -%}
+  {%- if next_index < sorted.size -%}
+    {%- assign next_page = sorted[next_index] -%}
+  {%- endif -%}
   <div class="snowveil-action-button-container">
     {% if prev_page %}
     <a class="snowveil-action-button" href="{{ prev_page.url | relative_url }}">
       ← {{ prev_page.title }}
     </a>
     {% endif %} {% if next_page %}
-    <a class="snowveil-button" href="{{ next_page.url | relative_url }}">
+    <a class="snowveil-action-button" href="{{ next_page.url | relative_url }}">
       {{ next_page.title }} →
     </a>
     {% endif %}
