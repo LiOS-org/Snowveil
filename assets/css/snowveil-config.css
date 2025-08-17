@@ -8,3 +8,7 @@
 main {
   --snowveil-card-background: var(--frosted-background);
 }
+article {
+  --snowveil-extended-action-button-background: var(--secondary);
+  --snowveil-button-on-hover-background: var(--primary);
+}
